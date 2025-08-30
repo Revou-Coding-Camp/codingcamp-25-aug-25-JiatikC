@@ -10,7 +10,10 @@
 </head>
 <body class="h-max-screen">
     <header class="header shadow-lg px-12 flex justify-between items-center sticky top-0 bg-white z-10">
-        <img class="h-9 rounded my-4" src="" alt="Logo">
+        <div class="flex items-center">
+            <img class="h-9 rounded my-4" src="" alt="Logo">
+            <span class="font-bold text-lg my-4 ml-2">Aurora Studio</span>
+        </div>
         <nav>
             <ul class="flex gap-8">
                 <li><a class="nav-item" href="#Hero">Home</a></li>
@@ -20,8 +23,122 @@
         </nav>
         <a href="#Contact" class="px-4 py-2 my-4 rounded-full bg-gray-800 text-white pointer">Contact Us</a>
     </header>
-    <main>
-        
+    <main class="flex flex-col gap-16">
+        <section id="Hero" class="h-max-screen flex flex-col justify-center items-center hero-img">
+            <h1 class="text-4xl font-bold">Hi <span id="username"></span>, Nice to meet you!</h1>
+            <h3 class="text-2xl font-semibold text-gray-200">Welcome to Aurora Studio</h3>
+            <p class="text-gray-400">Founded by Jiatik Choiriyah, UI/UX designer and creative director.</p>
+        </section>
+        <section id="Profile" class="mt-10 flex flex-col px-12 items-center">
+            <h2 class="font-bold text-2xl mb-2">Our Profile</h2>
+            <p class="mx-24 text-center text-lg font-medium">Aurora Studio is a boutique creative agency specializing in branding, identity systems, and web design. 
+                We translate abstract ideas into designs that resonate across cultures. Since 2021, Aurora Studio has worked with brands in lifestyle, fashion, F&B, and non-profits.</p>
+            <div class="grid grid-cols-2 mt-8 gap-16">
+                <div class="flex flex-col bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
+                    <p class="font-bold text-2xl mb-2">Vision</p>
+                    <p>Build timeless digital identities with warmth and clarity.</p>
+                </div>
+                <div class="flex flex-col bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
+                    <p class="font-bold text-2xl mb-2">Missions</p>
+                    <ul>
+                        <li>Human-first design, not trend-chasing.</li>
+                        <li>Balance storytelling with functionality.</li>
+                        <li>Support clients from concept to launch.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="Portofolio" class="flex flex-col items-center px-12" class="mt-10">
+            <h1 class="font-bold text-2xl mb-6">Our Portofolio</h1>
+            <div class="grid grid-cols-3 gap-8 justify-center">
+                <div class="portofolio-card">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=847&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="“Noir” Coffee Brand Identity">
+                    <h1>“Noir” Coffee Brand Identity</h1>
+                    <p>Full visual identity: logo, packaging, and store menu design. Dark minimalist branding to reflect the café’s bold flavor profile.</p>
+                </div>
+                <div class="portofolio-card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="Annual Report 2024 — GreenEarth Foundation">
+                    <h1>Annual Report 2024 — GreenEarth Foundation</h1>
+                    <p>Designed 120-page report with infographics and clean layout. Focused on readability and conveying complex data simply.</p>
+                </div>
+                <div class="portofolio-card">
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="“Lumé” Fashion Campaign">
+                    <h1>“Lumé” Fashion Campaign</h1>
+                    <p>Art direction for seasonal lookbook & social visuals. Photography styling, color palette, and typography system.</p>
+                </div>
+                <div class="portofolio-card">
+                    <img src="https://images.unsplash.com/photo-1508161773455-3ada8ed2bbec?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="“Waves” Exhibition Poster Series">
+                    <h1>“Waves” Exhibition Poster Series</h1>
+                    <p>Print + digital poster designs for a contemporary art exhibition. Experimental type layout paired with abstract wave graphics.</p>
+                </div>
+                <div class="portofolio-card">
+                    <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="Corporate Website — Orion Logistics">
+                    <h1>Corporate Website — Orion Logistics</h1>
+                    <p>Sleek B2B website design. Clean hierarchy, responsive grid, and easy-to-read case studies.</p>
+                </div>
+            </div>
+        </section>
+        <section class="flex flex-col p-6 bg-gray-100 items-center w-full" id="Contact">  
+            <h2 class="font-bold text-2xl mb-2">Contact Us</h2>
+            <p class="text-lg">Get in touch through the following methods.</p>
+            <div id="formGrid" class="grid grid-cols-2 py-8 px-12 rounded-lg w-full">
+                <form id="formMessage" onsubmit="validateForm(event)" class="flex flex-col gap-4 mr-8">
+                    <div class="flex flex-col">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="birthday">Birthday:</label>
+                        <input type="date" id="birthday" name="birthday" required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="gender">Gender:</label>
+                        <div class="flex gap-4">
+                            <div class="flex gap-2">
+                                <input type="radio" id="male" name="gender" value="Male">
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="flex gap-2">
+                                <input type="radio" id="female" name="gender" value="Female">
+                                <label for="female">Female</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <input class="px-4 py-2 my-4 rounded-full bg-gray-800 text-white pointer" type="submit" value="Submit">
+                </form>
+                <div id="resultSubmit" class="flex-col gap-4 border rounded-lg p-4">
+                    <p class="font-semibold text-lg" id="messageSubmit"></p>
+                    <div class="flex gap-2">
+                        Nama: <span id="display-name"></span>
+                    </div>
+                    <div class="flex gap-2">
+                        Email: <span id="display-email"></span> 
+                    </div>
+                    <div class="flex gap-2">
+                        Birthday: <span id="display-birthday"></span>
+                    </div>
+                    <div class="flex gap-2">
+                        ender: <span id="display-gender"></span>
+                    </div>
+                    <div class="flex gap-2">
+                        Message: <span id="display-message"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="px-12 py-4 text-right bg-gray-200 text-gray-600">
         Created by JiatikC - 2025
